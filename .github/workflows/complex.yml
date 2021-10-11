@@ -5,13 +5,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: ok
+      uses: actions/checkout@v2
     - run: date
   windowsjob:
     runs-on: windows-latest
     steps:
+    - name: ok
+      uses: actions/checkout@v2
     - run: date
   macjob:
     runs-on: macos-latest
     steps:
+    - name: ok
+      uses: actions/checkout@v2
     - run: date
-
+  dependsjob:
+    needs: [ubuntujob, windowsjob, macjob]
+    runs-on: macos-latest
+    steps:
+    - name: ok
+      uses: actions/checkout@v2
+    - run: date
