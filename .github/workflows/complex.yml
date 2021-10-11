@@ -4,17 +4,14 @@ jobs:
   ubuntujob:
     runs-on: ubuntu-latest
     steps:
-      -run: date
+    - name: ok
+    - run: date
   windowsjob:
     runs-on: windows-latest
     steps:
-      -run: date
+    - run: date
   macjob:
     runs-on: macos-latest
     steps:
-      -run: date
-  dependencyjob:
-    needs: [ubuntujob, windowsjob, macjob]
-    runs-on: macos-latest
-    steps:
-      -run: date
+    - run: date
+
